@@ -1,0 +1,1011 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+    background: #0a0a0f;
+    color: #ffffff;
+    line-height: 1.6;
+
+}
+/* Квантовая цветовая палитра */
+:root {
+    --quantum-blue: #6a11cb;
+    --quantum-purple: #2575fc;
+    --neon-cyan: #00d2ff;
+    --neon-pink: #ff2d75;
+    --dark-space: #0a0a0f;
+    --space-gray: #1a1a2e;
+    --star-white: #e6f1ff;
+    --energy-orange: #ff8a00;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Шрифты */
+h1, h2, h3, .club-name {
+    font-family: 'Montserrat', 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+/* Выделение */
+.highlight {
+    background: linear-gradient(90deg, var(--neon-cyan), var(--quantum-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+}
+/* Шапка */
+.header {
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--quantum-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(106, 17, 203, 0.2);
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--quantum-blue), var(--quantum-purple));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.quantum-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: white;
+    z-index: 1;
+}
+.club-name {
+    font-size: 1.4rem;
+    background: linear-gradient(to right, var(--neon-cyan), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+    line-height: 1.2;
+}
+/* Навигация */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.nav-link {
+    color: var(--star-white);
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(106, 17, 203, 0.1);
+    color: var(--neon-cyan);
+}
+
+/* Кнопки */
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--quantum-blue), var(--quantum-purple));
+    color: white;
+    padding: 14px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(106, 17, 203, 0.6);
+}
+.btn-primary::after {
+    content: '';
+    position: absolute;
+   top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%; 
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(30deg);
+    transition: all 0.5s ease;
+}
+
+.btn-primary:hover::after {
+    left: 120%;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--neon-cyan);
+    padding: 12px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--neon-cyan);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 210, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--neon-cyan);
+    padding: 10px 25px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border: 1px solid var(--neon-cyan);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: rgba(0, 210, 255, 0.1);
+}
+
+/* Подвал */
+.footer {
+    background: var(--space-gray);
+    padding: 50px 0 20px;
+    border-top: 2px solid var(--quantum-blue);
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--neon-cyan);
+}
+
+.footer-logo p {
+    color: var(--star-white);
+    opacity: 0.8;
+}
+
+.footer-info p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--star-white);
+    opacity: 0.9;
+}
+.footer-social {
+    display: flex;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+.footer-social a {
+    color: var(--star-white);
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.footer-social a:hover {
+    color: var(--neon-cyan);
+    background: rgba(0, 210, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--star-white);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom i.fa-heart {
+    color: var(--neon-pink);
+    margin: 0 5px;
+}
+
+/* ================== СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ ================== */
+
+/* Герой секция */
+.hero {
+    background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.95)), 
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3');
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle at 30% 50%, rgba(106, 17, 203, 0.1), transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(0, 210, 255, 0.05), transparent 50%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: var(--star-white);
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(0, 210, 255, 0.1);
+    text-align: center;
+
+}
+
+.stat-item:hover {
+    border-color: var(--neon-cyan);
+
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--quantum-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    color: var(--star-white);
+    opacity: 0.8;
+}
+
+/* Особенности главной */
+.features {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    border: 1px solid rgba(106, 17, 203, 0.1);
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--neon-cyan);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 210, 255, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+}
+
+.quantum-icon {
+    background: linear-gradient(135deg, var(--quantum-blue), var(--quantum-purple));
+    color: white;
+}
+
+.vr-icon {
+    background: linear-gradient(135deg, var(--neon-cyan), #0099cc);
+    color: white;
+}
+
+.stream-icon {
+    background: linear-gradient(135deg, var(--neon-pink), #ff0055);
+    color: white;
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--neon-cyan);
+}
+
+.feature-card p {
+    color: var(--star-white);
+    opacity: 0.8;
+    line-height: 1.8;
+}
+
+/* Бронирование главной */
+.booking-section {
+    padding: 80px 0;
+}
+
+.booking-card {
+    background: linear-gradient(135deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+    border-radius: 20px;
+    padding: 60px;
+    text-align: center;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.booking-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.booking-card p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--star-white);
+    opacity: 0.9;
+}
+
+.booking-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+.booking-form .btn-primary {
+    margin-top: 30px;
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+}
+
+/* ================== СТИЛИ ДЛЯ СТРАНИЦЫ ЗАЛОВ ================== */
+
+/* Заголовок страницы залов */
+.page-header {
+    background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.9)),
+                url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    color: var(--star-white);
+    opacity: 0.9;
+}
+
+/* Детали залов */
+.hall-details {
+    padding: 80px 0;
+}
+
+.hall-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(106, 17, 203, 0.1);
+    margin-bottom: 60px;
+    transition: all 0.3s ease;
+}
+
+.hall-card.featured {
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 40px rgba(0, 210, 255, 0.2);
+}
+.hall-header {
+    padding: 30px;
+    background: linear-gradient(90deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
+}
+
+.hall-header h2 {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.hall-price {
+    text-align: right;
+}
+
+.hall-price .price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--neon-cyan);
+    display: block;
+    line-height: 1;
+}
+
+.hall-price .period {
+    font-size: 1.2rem;
+    color: var(--star-white);
+    opacity: 0.8;
+}
+
+.hall-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+}
+
+.hall-image {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-gallery {
+    height: 400px;
+}
+
+.main-image {
+    height: 220%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+/* Спецификации залов */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.spec-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(0, 210, 255, 0.1);
+}
+
+.spec-item i {
+    font-size: 2rem;
+    color: var(--neon-cyan);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.spec-item h4 {
+    font-size: 1rem;
+    color: var(--star-white);
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.spec-item p {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+}
+
+/* Периферия залов */
+.peripherals {
+    margin-bottom: 40px;
+}
+
+.peripherals h3 {
+    font-size: 1.5rem;
+    color: var(--neon-cyan);
+    margin-bottom: 20px;
+}
+
+.peripherals ul {
+    list-style: none;
+}
+
+.peripherals li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--star-white);
+    display: flex;
+    align-items: center;
+}
+
+.peripherals li:last-child {
+    border-bottom: none;
+}
+.hall-info .btn-primary {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+}
+/* Бронирование залов */
+.booking-form-gaming {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.booking-form div{ 
+    margin-bottom: 20px;
+}
+
+
+.booking-form-gaming input,
+.booking-form-gaming select {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.booking-form-gaming .btn-primary {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+/* ================== СТИЛИ ДЛЯ СТРАНИЦЫ ТУРНИРОВ ================== */
+
+/* Турниры - заголовок */
+.events-page-header h1 {
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.events-page-header p {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* Ближайшие турниры */
+.upcoming-events {
+    padding: 80px 0;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(106, 17, 203, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.event-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.event-content {
+    padding: 25px;
+}
+
+.event-prize {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--neon-cyan);
+    font-weight: 600;
+}
+
+.event-details {
+    margin-bottom: 20px;
+}
+
+.event-details p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--star-white);
+    opacity: 0.9;
+}
+
+.event-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.spots {
+    padding-bottom: 10px;
+    color: var(--neon-cyan);
+    font-weight: 600;
+}
+
+/* Регистрация на турниры */
+.registration-section {
+    padding: 80px 0;
+    background: rgba(26, 26, 46, 0.5);
+}
+
+.registration-card {
+    background: linear-gradient(135deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.registration-card h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.registration-card p {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--star-white);
+    opacity: 0.9;
+}
+
+.registration-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.registration-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.registration-form .form-group {
+    margin-bottom: 20px;
+   
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.registration-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.registration-form .btn-primary {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.form-note {
+    color: var(--star-white);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* ================== ОБЩАЯ АДАПТИВНОСТЬ ================== */
+
+@media (max-width: 992px) {
+    .header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-list {
+        gap: 15px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .zone-card.featured {
+        transform: none;
+    }
+    
+    .hall-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-gallery {
+        height: 300px;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .registration-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }  
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-info p {
+        justify-content: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .features-grid,
+    .zones-grid,
+    .events-grid,
+    .weekly-grid,
+    .winners-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-card {
+        padding: 40px 20px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hall-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .hall-price {
+        text-align: center;
+    }
+    
+    .event-card.featured-event {
+        transform: none;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .stat-item {
+        padding: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+    }
+    
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+
+}
